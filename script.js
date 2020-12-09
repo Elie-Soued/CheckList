@@ -1,6 +1,10 @@
 //Selection the HTLM Elements
 const button = document.getElementById("button");
 
+const ourButton = document.getElementById("button2");
+
+const form = document.getElementById("form");
+
 // Defining the call back function
 function newElement() {
   //creating a li element
@@ -14,8 +18,15 @@ function newElement() {
   //selecting the checklist-wrapper
   const todoWrapper = document.getElementById("checklistbody");
   //appending li to the wrapper
-  todoWrapper.appendChild(li)
-}
+  todoWrapper.appendChild(li);
+
+  }
 
 //Defining the EventListener
 button.addEventListener("click",newElement);
+
+
+form.addEventListener("submit",function(e){
+   e.preventDefault();
+   newElement();
+});
