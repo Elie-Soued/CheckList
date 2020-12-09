@@ -1,21 +1,41 @@
 //Selection the HTLM Elements
 const button = document.getElementById("button");
 
-// Defining the call back function
-function newElement() {
-  //creating a li element
-  let li = document.createElement("li");
-  //storing the value of my input in the variable inputValue
+// Creating a task in the body
+const newElement = () => {
+  let div = document.createElement("div");
   let inputValue = document.getElementById("myInput").value;
-  //creating a textNode with the inputValue  and storing it in a t
   let t = document.createTextNode(inputValue);
-  //appending t to the li
-  li.appendChild(t);
-  //selecting the checklist-wrapper
+  div.appendChild(t);
   const todoWrapper = document.getElementById("checklistbody");
-  //appending li to the wrapper
-  todoWrapper.appendChild(li)
-}
+  todoWrapper.appendChild(div);
 
-//Defining the EventListener
-button.addEventListener("click",newElement);
+  //Creating a checkbox when the button is pressed
+  const createACheckBox = () => {
+    let edit = document.createElement("input");
+    edit.type = "checkbox";
+    edit.id = "done";
+    edit.value = "done";
+
+    let remove = document.createElement("input");
+    remove.type = "checkbox";
+    remove.id = "remove";
+    remove.value = "remove";
+
+    let br = document.createElement("br");
+    let checklistbody = document.getElementById("checklistbody");
+    checklistbody.appendChild(edit);
+    checklistbody.appendChild(remove);
+    checklistbody.appendChild(br);
+
+    edit.addEventListener("click", () => {
+      console.log(t);
+      let doneResult = t.strike();
+      document.getElementById("myInput").innerHTML = doneResult;
+    });
+  };
+
+  createACheckBox();
+};
+
+button.addEventListener("click", newElement);
