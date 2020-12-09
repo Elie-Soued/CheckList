@@ -1,5 +1,5 @@
 //Selection the HTLM Elements
-const button = document.getElementById("button");
+const form = document.getElementById("form");
 
 // Creating a task in the body
 const newElement = () => {
@@ -10,6 +10,7 @@ const newElement = () => {
   const todoWrapper = document.getElementById("checklistbody");
   todoWrapper.appendChild(div);
 
+ 
   //Creating a checkbox when the button is pressed
   const createACheckBox = () => {
     let edit = document.createElement("input");
@@ -38,4 +39,7 @@ const newElement = () => {
   createACheckBox();
 };
 
-button.addEventListener("click", newElement);
+form.addEventListener("submit",function(e){
+   e.preventDefault();
+   newElement();
+});
