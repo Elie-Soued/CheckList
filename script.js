@@ -4,7 +4,6 @@ const form = document.getElementById("form");
 // Creating a task in the body
 const newElement = () => {
   let div = document.createElement("div");
-  //added today
   div.classList.add("stricked");
   div.classList.toggle("stricked");
 
@@ -23,12 +22,10 @@ const newElement = () => {
   remove.type = "checkbox";
   remove.id = "remove";
   remove.value = "remove";
-
-  //added today
+  
   div.appendChild(edit);
   div.appendChild(remove);
 
-  //changed today
   edit.addEventListener("click", (e) => {
     const checkbox = e.target;
     const todo = checkbox.parentNode;
