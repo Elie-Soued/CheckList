@@ -29,8 +29,8 @@ const newElement = () => {
   div.appendChild(remove);
 
   //changed today
-  edit.addEventListener("click", (event) => {
-    const checkbox = event.target;
+  edit.addEventListener("click", (e) => {
+    const checkbox = e.target;
     const todo = checkbox.parentNode;
     todo.classList.toggle("stricked");
   });
@@ -40,7 +40,7 @@ const newElement = () => {
   });
 };
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   newElement();
 });
