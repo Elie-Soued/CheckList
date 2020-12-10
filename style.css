@@ -1,6 +1,50 @@
+html {
+  box-sizing: border-box;
+  font-size: 2vmax;
+}
 
+h3 span {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: indianred;
+}
 
-main{
-  width:80vw;
+body {
+  width: 80vw;
   margin: auto;
+  text-align: center;
+}
+
+form {
+  width: 104%;
+  margin: 10% auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 2%;
+}
+
+#myInput {
+  min-width: 60%;
+  height: 2vh;
+}
+
+#button2 {
+  height: 3vh;
+  margin-left: 3.5%;
+  background-color: indianred;
+}
+
+#checklistbody {
+  padding: 5vh 0;
+  border-top: solid 8px black;
+}
+
+footer {
+  padding-top: 5vh;
+  border-top: solid 8px black;
+  margin-top: 10vh;
+  font-size: 0.6rem;
 }
