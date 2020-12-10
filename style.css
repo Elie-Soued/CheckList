@@ -1,6 +1,12 @@
-
-
-main{
-  width:80vw;
+main {
+  width: 80vw;
   margin: auto;
 }
+
+.stricked {
+  text-decoration: line-through;
+}
+
+/* .unstricked {
+  text-decoration: none;
+} */
