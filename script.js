@@ -4,42 +4,40 @@ const form = document.getElementById("form");
 // Creating a task in the body
 const newElement = () => {
   let div = document.createElement("div");
+  div.classList.add("stricked");
+  div.classList.toggle("stricked");
+
   let inputValue = document.getElementById("myInput").value;
   let t = document.createTextNode(inputValue);
   div.appendChild(t);
   const todoWrapper = document.getElementById("checklistbody");
   todoWrapper.appendChild(div);
 
- 
-  //Creating a checkbox when the button is pressed
-  const createACheckBox = () => {
-    let edit = document.createElement("input");
-    edit.type = "checkbox";
-    edit.id = "done";
-    edit.value = "done";
+  let edit = document.createElement("input");
+  edit.type = "checkbox";
+  edit.id = "done";
+  edit.value = "done";
 
-    let remove = document.createElement("input");
-    remove.type = "checkbox";
-    remove.id = "remove";
-    remove.value = "remove";
+  let remove = document.createElement("input");
+  remove.type = "checkbox";
+  remove.id = "remove";
+  remove.value = "remove";
+  
+  div.appendChild(edit);
+  div.appendChild(remove);
 
-    let br = document.createElement("br");
-    let checklistbody = document.getElementById("checklistbody");
-    checklistbody.appendChild(edit);
-    checklistbody.appendChild(remove);
-    checklistbody.appendChild(br);
+  edit.addEventListener("click", (e) => {
+    const checkbox = e.target;
+    const todo = checkbox.parentNode;
+    todo.classList.toggle("stricked");
+  });
 
-    edit.addEventListener("click", () => {
-      console.log(t);
-      let doneResult = t.strike();
-      document.getElementById("myInput").innerHTML = doneResult;
-    });
-  };
-
-  createACheckBox();
+  remove.addEventListener("click", () => {
+    todoWrapper.removeChild(div);
+  });
 };
 
-form.addEventListener("submit",function(e){
-   e.preventDefault();
-   newElement();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  newElement();
 });

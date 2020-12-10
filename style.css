@@ -1,3 +1,4 @@
+
 html {
   box-sizing: border-box;
   font-size: 2vmax;
@@ -48,3 +49,8 @@ footer {
   margin-top: 10vh;
   font-size: 0.6rem;
 }
+
+.stricked {
+  text-decoration: line-through;
+}
+
