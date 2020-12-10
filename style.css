@@ -1,4 +1,3 @@
-
 html {
   box-sizing: border-box;
   font-size: 2vmax;
@@ -54,3 +53,12 @@ footer {
   text-decoration: line-through;
 }
 
+.remove {
+  border: 1px solid black;
+  width: 30px;
+}
+
+.edit {
+  border: 1px solid black;
+  width: 30px;
+}

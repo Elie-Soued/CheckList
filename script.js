@@ -13,16 +13,18 @@ const newElement = () => {
   const todoWrapper = document.getElementById("checklistbody");
   todoWrapper.appendChild(div);
 
-  let edit = document.createElement("input");
-  edit.type = "checkbox";
-  edit.id = "done";
-  edit.value = "done";
+  let edit = document.createElement("div");
+  edit.classList.add("edit");
+  // edit.type = "checkbox";
+  // edit.id = "done";
+  // edit.value = "done";
 
-  let remove = document.createElement("input");
-  remove.type = "checkbox";
-  remove.id = "remove";
-  remove.value = "remove";
-  
+  let remove = document.createElement("div");
+  remove.classList.add("remove");
+  // remove.type = "checkbox";
+  // remove.id = "remove";
+  // remove.value = "remove";
+
   div.appendChild(edit);
   div.appendChild(remove);
 
