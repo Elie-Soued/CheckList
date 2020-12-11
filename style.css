@@ -213,7 +213,7 @@ label {
 
 #myInput {
   min-width: 100%;
-  height: 1.5rem;
+  min-height: 1.5rem;
   background-color: rgb(240, 238, 238);
   padding: 0.1rem 0.1rem 0.1rem 0.5rem;
   border-radius: 3px;
@@ -297,7 +297,7 @@ input:focus {
 }
 
 .stricked {
-  text-decoration: line-through;
+  text-decoration: line-through var(--col1);
 }
 
 /*Footer*/
