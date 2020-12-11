@@ -1,12 +1,143 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*global colour variable*/
+:root {
+  --col1: rgb(205, 92, 92);
+  --col2: black;
+}
+
+/*responsive font-size*/
 html {
   box-sizing: border-box;
   font-size: 2vmax;
-}
-
-h3 span {
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  color: indianred;
 }
 
 body {
@@ -15,8 +146,29 @@ body {
   text-align: center;
 }
 
+/*Header*/
+
+h1 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  word-spacing: 0.5rem;
+  margin-top: 5%;
+  font-family: sans-serif;
+  font-weight: 200;
+}
+
+h3 span {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: var(--col1);
+}
+
+/*Input Area*/
 form {
-  width: 104%;
+  width: 100%;
   margin: 10% auto;
   text-align: left;
 }
@@ -29,36 +181,76 @@ label {
 #myInput {
   min-width: 60%;
   height: 2vh;
+  background-color: rgb(240, 238, 238);
+  padding: 0.1rem 0.1rem 0.1rem 0.5rem;
+  font-size: 0.5rem;
 }
 
 #button2 {
   height: 3vh;
   margin-left: 3.5%;
-  background-color: indianred;
+  background-color: var(--col1);
+  font-size: 0.5rem;
+  color: white;
 }
 
+/*List Area*/
 #checklistbody {
   padding: 5vh 0;
-  border-top: solid 8px black;
+  border-top: solid 8px var(--col2);
 }
 
-footer {
-  padding-top: 5vh;
-  border-top: solid 8px black;
-  margin-top: 10vh;
-  font-size: 0.6rem;
+.todoitem {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+}
+
+.edit {
+  border: 3px solid var(--col1);
+  width: 14px;
+  height: 14px;
+  margin: 0 1rem 0 0.3rem;
+  border-radius: 5rem;
+}
+
+.edit:hover {
+  border: 3px solid var(--col2);
+  transform: scale(1.1);
+}
+
+.clicked {
+  background-color: var(--col2);
+}
+
+.remove {
+  width: 14px;
+  height: 14px;
+  margin: 0 0.3rem;
+  color: var(--col1);
+  text-decoration: none;
+  transform-origin: bottom;
+}
+
+.remove::after {
+  content: "\d7";
+}
+
+.remove:hover {
+  color: var(--col2);
+  transform: scale(1.1);
 }
 
 .stricked {
   text-decoration: line-through;
 }
 
-.remove {
-  border: 1px solid black;
-  width: 30px;
-}
-
-.edit {
-  border: 1px solid black;
-  width: 30px;
+/*Footer*/
+footer {
+  padding-top: 5vh;
+  border-top: solid 8px var(--col2);
+  margin-top: 10vh;
+  font-size: 0.6rem;
 }
