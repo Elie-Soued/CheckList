@@ -236,6 +236,7 @@ label {
 
 .remove::after {
   content: "\d7";
+  font-size: 1.2rem;
 }
 
 .remove:hover {
