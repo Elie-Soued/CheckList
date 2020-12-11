@@ -177,30 +177,73 @@ label {
   margin-bottom: 1%;
   font-size: 1.5rem;
 }
+/*Cursor STARTS*/
+.cursor {
+  flex: 2 0 80%;
+  position: relative;
+}
+
+.cursor i {
+  position: absolute;
+  width: 1px;
+  height: 61%;
+  background-color: var(--col1);
+  left: 0.5rem;
+  top: 20%;
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+.cursor input:focus + i {
+  display: none;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*Cursor ENDS*/
 
 #myInput {
-  min-width: 60%;
+  min-width: 100%;
   height: 1.5rem;
   background-color: rgb(240, 238, 238);
   padding: 0.1rem 0.1rem 0.1rem 0.5rem;
+  border-radius: 3px;
   font-size: 1rem;
-  flex: 2 0 80%;
   border: none;
   font-family: inherit;
   color: var(--col1);
 }
 
+input:focus {
+  outline: none;
+}
+
 #button2 {
   height: 1.5rem;
   margin-left: 2.5rem;
-  padding: 0.1rem 0 0.1rem 0.25rem;
-  background-color: var(--col1);
+  padding: 0.2rem 0 0.2rem 0.25rem;
+  border: solid 2px var(--col1);
+  border-radius: 4px;
+  background-color: inherit;
   font-size: 0.8rem;
-  color: white;
+  color: var(--col2);
   flex: 2 0 10%;
-  border: none;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
+  transition: background-color 0.2s ease;
+}
+
+#button2:hover {
+  background-color: var(--col1);
 }
 
 /*List Area*/
