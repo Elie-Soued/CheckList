@@ -186,10 +186,10 @@ label {
 .cursor i {
   position: absolute;
   width: 1px;
-  height: 61%;
+  height: 1rem;
   background-color: var(--col1);
   left: 0.5rem;
-  top: 20%;
+  top: 0.3rem;
   animation-name: blink;
   animation-duration: 800ms;
   animation-iteration-count: infinite;
