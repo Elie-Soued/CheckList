@@ -1,12 +1,9 @@
 //Selection the HTLM Elements
 const form = document.getElementById("form");
 
-// Creating a task in the body
+//Creating a task in the body
 const newElement = () => {
   let div = document.createElement("div");
-  //div.classList.add("stricked");
-  //div.classList.toggle("stricked");
-
   //Add a class to div
   div.classList.add("todoitem");
 
@@ -17,7 +14,6 @@ const newElement = () => {
   let p = document.createElement("p");
   p.classList.add("stricked");
   p.classList.toggle("stricked");
-
   p.appendChild(t);
   div.appendChild(p);
   const todoWrapper = document.getElementById("checklistbody");
@@ -27,24 +23,15 @@ const newElement = () => {
   edit.classList.add("edit");
   edit.classList.add("clicked");
   edit.classList.toggle("clicked");
-  // edit.type = "checkbox";
-  // edit.id = "done";
-  // edit.value = "done";
 
   let remove = document.createElement("div");
   remove.classList.add("remove");
-  // remove.type = "checkbox";
-  // remove.id = "remove";
-  // remove.value = "remove";
 
   div.appendChild(edit);
   div.appendChild(remove);
 
   edit.addEventListener("click", (e) => {
     const checkbox = e.target;
-    //const todo = checkbox.parentNode;
-    //todo.classList.toggle("stricked");
-
     //Toggle .stricked on p tag
     p.classList.toggle("stricked");
     //change background of edit button on click
