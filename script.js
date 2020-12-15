@@ -14,37 +14,47 @@ class ToDo {
 
 class ToDoList {
   constructor(toDoList) {
-    this._toDoList = toDoList;
+    this._allToDos = alltoDos;
     this._doneCounter = 0;
-    this._toDoCounter = toDoList.length;
+    this._toDoCounter = alltoDos.length;
     this._nextTBD = 1;
     this._currentToDo = 0;
     this._lastDone = null;
   }
+
+  add(todo) {
+    this._toDoList.push(todo);
+    this._toDoCounter++;
+  }
+
+  finishCurrentTask(indexOfTodo) {
+    this._allToDos[indexOfTodo].markAsRead();
+    this._doneCounter++;
+    this._toDoCounter--;
+    this._nextTBD = this._allToDos[indexOfTodo + 2];
+    this._currentToDo = this._allToDos[indexOfTodo + 1];
+    this._lastDone = this._allToDos[indexOfTodo];
+  }
+
+  clear() {}
 }
+// Using Methods instead of EventListeners
 
 //Selection the HTLM Elements
 const form = document.getElementById("form");
 
-// Creating a task in the body
 const newElement = () => {
   let div = document.createElement("div");
-  //div.classList.add("stricked");
-  //div.classList.toggle("stricked");
-
-  //Add a class to div
   div.classList.add("todoitem");
-
   let inputValue = document.getElementById("myInput").value;
   let t = document.createTextNode(inputValue);
-
-  //Create a p tag enclosing inputValue and allow .stricked toggle
   let p = document.createElement("p");
   p.classList.add("stricked");
   p.classList.toggle("stricked");
-
   p.appendChild(t);
+  //todoitem
   div.appendChild(p);
+  //todoList
   const todoWrapper = document.getElementById("checklistbody");
   todoWrapper.appendChild(div);
 
@@ -52,36 +62,27 @@ const newElement = () => {
   edit.classList.add("edit");
   edit.classList.add("clicked");
   edit.classList.toggle("clicked");
-  // edit.type = "checkbox";
-  // edit.id = "done";
-  // edit.value = "done";
 
   let remove = document.createElement("div");
   remove.classList.add("remove");
-  // remove.type = "checkbox";
-  // remove.id = "remove";
-  // remove.value = "remove";
-
   div.appendChild(edit);
   div.appendChild(remove);
 
+  //Finish this current Task()
   edit.addEventListener("click", (e) => {
     const checkbox = e.target;
-    //const todo = checkbox.parentNode;
-    //todo.classList.toggle("stricked");
-
-    //Toggle .stricked on p tag
 
     p.classList.toggle("stricked");
-    //change background of edit button on click
     edit.classList.toggle("clicked");
   });
 
+  //Remove()
   remove.addEventListener("click", () => {
     todoWrapper.removeChild(div);
   });
 };
 
+// Add()
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   newElement();
