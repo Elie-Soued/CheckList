@@ -1,3 +1,28 @@
+class ToDo {
+  constructor(content) {
+    this._content = content;
+    this._dateStamp = dateStamp;
+    this._done = false;
+    this._dateDone = dateDone;
+  }
+
+  markAsDone() {
+    this._done = true;
+    this._dateDone = new Date();
+  }
+}
+
+class ToDoList {
+  constructor(toDoList) {
+    this._toDoList = toDoList;
+    this._doneCounter = 0;
+    this._toDoCounter = toDoList.length;
+    this._nextTBD = 1;
+    this._currentToDo = 0;
+    this._lastDone = null;
+  }
+}
+
 //Selection the HTLM Elements
 const form = document.getElementById("form");
 
@@ -46,6 +71,7 @@ const newElement = () => {
     //todo.classList.toggle("stricked");
 
     //Toggle .stricked on p tag
+
     p.classList.toggle("stricked");
     //change background of edit button on click
     edit.classList.toggle("clicked");
