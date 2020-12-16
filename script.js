@@ -85,13 +85,12 @@ div.appendChild(p);
 console.log(div.innerText);
 
 //add event
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const task = new ToDo(div);
   myChecklist.add(task);
   console.log(task);
-
-  // todoWrapper.appendChild(task);
 });
 
 /////old ways
