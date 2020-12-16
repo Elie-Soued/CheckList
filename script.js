@@ -20,6 +20,18 @@ class ToDoList {
   add(todo) {
     this._allToDos.push(todo);
     this._toDoCounter++;
+
+    let div = document.createElement("div");
+    div.classList.add("todoitem");
+    let inputValue = document.getElementById("myInput").value;
+    let t = document.createTextNode(inputValue);
+    let p = document.createElement("p");
+    p.classList.add("stricked");
+    p.classList.toggle("stricked");
+    p.appendChild(t);
+    div.appendChild(p);
+    const todoWrapper = document.getElementById("checklistbody");
+    todoWrapper.appendChild(div);
   }
 
   finishCurrentTask(indexOfTodo) {
