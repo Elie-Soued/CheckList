@@ -30,6 +30,17 @@ class ToDoList {
     p.classList.toggle("stricked");
     p.appendChild(t);
     div.appendChild(p);
+
+    let edit = document.createElement("div");
+    edit.classList.add("edit");
+    edit.classList.add("clicked");
+    edit.classList.toggle("clicked");
+    div.appendChild(edit);
+
+    let remove = document.createElement("div");
+    remove.classList.add("remove");
+    div.appendChild(remove);
+
     const todoWrapper = document.getElementById("checklistbody");
     todoWrapper.appendChild(div);
   }
@@ -73,6 +84,7 @@ div.appendChild(p);
 
 console.log(div.innerText);
 
+//add event
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const task = new ToDo(div);
