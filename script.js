@@ -1,8 +1,25 @@
 class ToDo {
-  constructor(content) {
-    this._content = content;
+  constructor() {
+    this._content = document.createElement("div");
+    this._content.classList.add("todoitem");
+    let inputValue = document.getElementById("myInput").value;
+    let t = document.createTextNode(inputValue);
+    let p = document.createElement("p");
+    p.classList.add("stricked");
+    p.classList.toggle("stricked");
+    p.appendChild(t);
+    this._content.appendChild(p);
+
+    let edit = document.createElement("div");
+    edit.classList.add("edit");
+    edit.classList.add("clicked");
+    edit.classList.toggle("clicked");
+    this._content.appendChild(edit);
+
+    let remove = document.createElement("div");
+    remove.classList.add("remove");
+    this._content.appendChild(remove);
     this._done = false;
-    // this._tag = tag;
   }
 
   markAsDone() {
@@ -11,7 +28,7 @@ class ToDo {
 }
 
 class ToDoList {
-  constructor(toDoList) {
+  constructor(toDoList) { // toDoList never used in constructor, probably useless
     this._allToDos = [];
     this._doneCounter = 0;
     this._toDoCounter = this._allToDos.length;
@@ -21,28 +38,9 @@ class ToDoList {
     this._allToDos.push(todo);
     this._toDoCounter++;
 
-    let div = document.createElement("div");
-    div.classList.add("todoitem");
-    let inputValue = document.getElementById("myInput").value;
-    let t = document.createTextNode(inputValue);
-    let p = document.createElement("p");
-    p.classList.add("stricked");
-    p.classList.toggle("stricked");
-    p.appendChild(t);
-    div.appendChild(p);
-
-    let edit = document.createElement("div");
-    edit.classList.add("edit");
-    edit.classList.add("clicked");
-    edit.classList.toggle("clicked");
-    div.appendChild(edit);
-
-    let remove = document.createElement("div");
-    remove.classList.add("remove");
-    div.appendChild(remove);
 
     const todoWrapper = document.getElementById("checklistbody");
-    todoWrapper.appendChild(div);
+    todoWrapper.appendChild(todo._content);
   }
 
   finishCurrentTask(indexOfTodo) {
@@ -63,16 +61,8 @@ const todoWrapper = document.getElementById("checklistbody");
 //The instance from which to call the class methods
 const myChecklist = new ToDoList(todoWrapper);
 
-console.log(myChecklist);
 
-const washing = new ToDo("I am washing");
-const cleaning = new ToDo("I am cleaing");
-const myTodos = [washing, cleaning];
-const myChecklist2 = new ToDoList(myTodos);
-
-myChecklist2.add(washing);
-
-let div = document.createElement("div");
+/*let div = document.createElement("div");
 div.classList.add("todoitem");
 let inputValue = document.getElementById("myInput").value;
 let t = document.createTextNode(inputValue);
@@ -83,14 +73,13 @@ p.appendChild(t);
 div.appendChild(p);
 
 console.log(div.innerText);
-
+*/
 //add event
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const task = new ToDo(div);
+  const task = new ToDo();
   myChecklist.add(task);
-  console.log(task);
 });
 
 /////old ways
