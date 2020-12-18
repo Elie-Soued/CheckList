@@ -15,10 +15,10 @@
 ![Screen Shot 2020-12-18 at 12 16 17](https://user-images.githubusercontent.com/74352389/102608891-e74dce80-412a-11eb-8c9d-a08084402651.png)
 
 
-- [ ] Wireframe
-- [ ] Project Tracking with [Trello](https://trello.com/b/vQFtaVTw/checklist)
-- [ ] Decide on Design view
-- [ ] Walkthrough document: teams for each section & Planing step by step the logic 
+- [x] Wireframe
+- [x] Project Tracking with [Trello](https://trello.com/b/vQFtaVTw/checklist)
+- [x] Decide on Design view
+- [x] Walkthrough document: teams for each section & Planing step by step the logic 
 
  NOTE: for Github try to use Tags. 
 
@@ -32,11 +32,11 @@
 # Project Development
 ![Screen Shot 2020-12-18 at 12 22 23](https://user-images.githubusercontent.com/74352389/102609427-bf129f80-412b-11eb-9252-8a71aeee4c46.png)
 
- [x] Frontend
+ - [x] Frontend
 
- [x] Add dynamic with JS
+ - [x] Add dynamic with JS
 
- [x] Transform/Rebuild project with REACT
+ - [x] Transform/Rebuild project with REACT
 
 
 # Resources
