@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- [Overview](#project/overview)
+- [Overview](#project-overview)
 - [Project Development](#Project-development)
 - [Resources](#resources)
 
