@@ -5,7 +5,7 @@
 
 ## Table of Contents
 
-- [Overview](#project-overview)
+- [Overview](#project/overview)
 - [Project Development](#Project-development)
 - [Resources](#resources)
 
@@ -32,11 +32,11 @@
 # Project Development
 ![Screen Shot 2020-12-18 at 12 22 23](https://user-images.githubusercontent.com/74352389/102609427-bf129f80-412b-11eb-9252-8a71aeee4c46.png)
 
- [ ] Frontend
+ [x] Frontend
 
- [ ] Add dynamic with JS
+ [x] Add dynamic with JS
 
- [ ] Transform/Rebuild project with REACT
+ [x] Transform/Rebuild project with REACT
 
 
 # Resources
