@@ -1,0 +1,43 @@
+
+15 December
+ (ref. Calculator)
+  1. create instances of todo 
+  2. find a way to push the todo in the todolist: add = submit button
+  3. create an option to mark them as done  edit = mark as done
+  4. create an option to delete them remove = deletes from list
+
+
+  16 December
+
+  1.create todo item:
+      a. target
+      b. execute something
+
+
+
+  2. push to do item to the list
+
+
+
+
+
+
+
+
+
+
+
+///////////////
+  markAsDone
+how do I call it
+function
+
+add = submit button
+
+add(todo) {
+    const doingTheDishes = new ToDo ("I will do the dishes");
+    const doingTheDishes = new ToDo ("I will do the dishes");
+
+    this._toDoList.push(todo);
+    this._toDoCounter++;
+  }

@@ -1,25 +1,43 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <title>Checklist</title>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Checklist</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script async type="text/javascript" src="script.js"></script>
   </head>
+
   <body>
     <header>
-      <h1>Page Title</h1>
-      <h3>second title</h3>
+      <h1>The <span>Simple</span> Time Manager</h1>
     </header>
 
     <main>
-      <form>
-        <label for="checklist"> Create your todo</label>
-        <input id="checklist" name="checklist" type="checklist" />
-        <input type="submit" value="add" />
+      <!-- Typing section -->
+
+      <form id="form">
+        <label for="checklist"> What is next?</label>
+        <div class="cursor">
+          <div contenteditable="true" id="myInput" type="text"></div>
+
+          <i></i>
+        </div>
+        <input id="button2" type="submit" value="Submit" />
       </form>
-      <div></div>
+
+      <!--Checklist Body -->
+
+      <div id="checklistbody"></div>
     </main>
 
-    <footer></footer>
+    <!--Footer-->
+
+    <footer>
+      <p>
+        Trello'd, wireframed, researched and coded by Andy, Avril, Diego & Elie.
+      </p>
+    </footer>
   </body>
 </html>
